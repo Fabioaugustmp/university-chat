@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistente Academico Inteligente</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="hero">
+      <p class="eyebrow">Projeto de PLN</p>
+      <h1>Assistente Academico Inteligente</h1>
+      <p class="subtitle">
+        Exemplo didatico com FastAPI, BERT, memoria de contexto e uma interface simples
+        para demonstrar o pipeline completo de PLN em sala.
+      </p>
+      <div class="legend">
+        <span>Secretaria</span>
+        <span>Financeiro</span>
+        <span>Disciplinas</span>
+        <span>Professores</span>
+      </div>
+    </section>
+
+    <section class="chat-card">
+      <header class="chat-header">
+        <div>
+          <h2>Chat de demonstracao</h2>
+          <p>Experimente perguntas como "Como solicito meu historico?"</p>
+        </div>
+        <button id="reset-chat" type="button">Nova conversa</button>
+      </header>
+
+      <div id="chat-messages" class="chat-messages"></div>
+
+      <aside id="insights" class="insights">
+        <div>
+          <strong>Intencao</strong>
+          <span id="intent-value">-</span>
+        </div>
+        <div>
+          <strong>Confianca</strong>
+          <span id="confidence-value">-</span>
+        </div>
+        <div>
+          <strong>Contexto</strong>
+          <span id="topic-value">-</span>
+        </div>
+        <div>
+          <strong>Motor</strong>
+          <span id="engine-value">-</span>
+        </div>
+      </aside>
+
+      <form id="chat-form" class="chat-form">
+        <label class="sr-only" for="message">Mensagem</label>
+        <input
+          id="message"
+          name="message"
+          type="text"
+          placeholder="Digite sua pergunta..."
+          autocomplete="off"
+          required
+        >
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
