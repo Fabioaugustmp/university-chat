@@ -4,6 +4,60 @@ Projeto didatico de **Processamento de Linguagem Natural (PLN)** para graduacao,
 
 ---
 
+## Setup Rapido
+
+### Requisitos
+
+- Python instalado
+- `pip` disponivel no ambiente
+
+### Instalacao
+
+1. Clone o repositorio:
+
+```powershell
+git clone https://github.com/Fabioaugustmp/university-chat.git
+cd university-chat
+```
+
+2. Crie e ative o ambiente virtual:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+3. Instale as dependencias:
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### Como rodar
+
+Inicie a aplicacao com:
+
+```powershell
+python -m uvicorn app.main:app --reload
+```
+
+Depois, abra no navegador:
+
+- Interface web: `http://127.0.0.1:8000`
+- Documentacao da API: `http://127.0.0.1:8000/docs`
+
+### Observacao sobre o BERT
+
+Por padrao, o projeto tenta usar apenas o modelo local. Se quiser permitir download automatico do modelo, rode:
+
+```powershell
+$env:ALLOW_BERT_DOWNLOAD="1"
+python -m uvicorn app.main:app --reload
+```
+
+---
+
 ## 1. Visao Geral
 
 Este projeto mostra, de ponta a ponta, como um sistema de PLN pode ser organizado em camadas claras:
@@ -466,31 +520,57 @@ flowchart LR
 
 ---
 
-## 13. Como Executar o Projeto
+## 13. Setup, Instalacao e Execucao
 
-### 13.1 Criar o ambiente virtual
+### 13.1 Clonar o repositorio
+
+```powershell
+git clone https://github.com/Fabioaugustmp/university-chat.git
+cd university-chat
+```
+
+### 13.2 Criar o ambiente virtual
 
 ```powershell
 python -m venv .venv
+```
+
+### 13.3 Ativar o ambiente virtual
+
+No PowerShell:
+
+```powershell
 .venv\Scripts\Activate.ps1
 ```
 
-### 13.2 Instalar dependencias
+No Prompt de Comando:
+
+```bat
+.venv\Scripts\activate.bat
+```
+
+### 13.4 Instalar as dependencias
 
 ```powershell
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-### 13.3 Rodar a aplicacao
+### 13.5 Rodar a aplicacao
 
 ```powershell
 python -m uvicorn app.main:app --reload
 ```
 
-### 13.4 Abrir no navegador
+### 13.6 Abrir no navegador
 
-- Interface: `http://127.0.0.1:8000`
+- Interface web: `http://127.0.0.1:8000`
 - Docs interativas: `http://127.0.0.1:8000/docs`
+- Health check: `http://127.0.0.1:8000/api/health`
+
+### 13.7 Encerrar a aplicacao
+
+Para parar o servidor, pressione `Ctrl + C` no terminal.
 
 ---
 
